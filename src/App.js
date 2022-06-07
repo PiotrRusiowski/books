@@ -1,25 +1,27 @@
-import './App.css';
-import {useEffect} from "react";
-import axios from "axios";
+import "./App.css";
+import Router from "./components/Router/Router";
+import Navigation from "./components/Navigation/Navigation";
 
-function App() {
-    useEffect(() => {
-        getTopReatedMove();
-    }, []);
-    const getTopReatedMove = () => {
-        axios
-            .get("http://localhost:3001/api/books/"
-            )
-            .then((res) => {
-                console.log(res)
-            })
-            .catch((err) => console.log(err))
-    };
+
+const App = () => {
+    // useEffect(() => {
+    //     getTopReatedMove();
+    // }, []);
+    // const getTopReatedMove = () => {
+    //     axios
+    //         .get("http://localhost:3001/api/books/"
+    //         )
+    //         .then((res) => {
+    //             console.log(res)
+    //         })
+    //         .catch((err) => console.log(err))
+    // };
     return (
         <div className="App">
-            <h1>jestem</h1>
+            <Navigation/>
+            <Router/>
         </div>
     );
-}
+};
 
 export default App;
